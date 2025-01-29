@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="w-full flex items-center justify-center bg-ring z-[1000] top-0"
+      className="w-full flex items-center justify-center bg-ring top-0"
       id="hero"
     >
       <nav className="mx-auto max-w-desktop px-10 py-5 flex justify-between items-center w-full">

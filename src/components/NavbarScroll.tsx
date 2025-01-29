@@ -37,7 +37,7 @@ const NavbarScroll = () => {
 
   const scrollNav = () => {
     var y = window.scrollY;
-    if (y >= 300) {
+    if (y >= 100) {
       console.log(true);
       navbarRef!.current!.classList.add("block");
       navbarRef!.current!.classList.remove("hidden");
@@ -53,7 +53,11 @@ const NavbarScroll = () => {
   }, []);
 
   return (
-    <div className="top-0 sticky transition hidden" id="hero" ref={navbarRef}>
+    <div
+      className="top-0 sticky transition hidden z-50"
+      id="hero"
+      ref={navbarRef}
+    >
       <Navbar />
     </div>
   );
