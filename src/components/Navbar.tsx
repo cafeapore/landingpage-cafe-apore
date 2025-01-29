@@ -84,7 +84,9 @@ const Navbar = () => {
         <div className="hidden tablet:flex gap-10 text-background ">
           {menuOptions.map((option, index) => (
             <Link href={option.route} key={index}>
-              <p className="font-light hover:scale-125">{option.title}</p>
+              <p className="font-light hover:scale-110 hover:text-yellow-500 transition">
+                {option.title}
+              </p>
             </Link>
           ))}
         </div>
