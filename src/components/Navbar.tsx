@@ -43,7 +43,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full flex items-center justify-center bg-ring">
+    <div className="w-full flex items-center justify-center bg-ring sticky top-0">
       <div className="mx-auto max-w-desktop px-10 py-5 flex justify-between items-center w-full">
         <Image
           alt="Logo"

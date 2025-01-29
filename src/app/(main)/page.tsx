@@ -1,5 +1,11 @@
+import HeroSection from "@/components/sections/Hero";
+
 const Main = () => {
-  return <div className="min-h-screen">Main</div>;
+  return (
+    <div>
+      <HeroSection />
+    </div>
+  );
 };
 
 export default Main;
