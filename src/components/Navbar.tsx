@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const menuOptions = [
@@ -35,9 +36,14 @@ const Navbar = () => {
     },
   ];
 
+  const contactButton = (
+    <Button className="bg-yellow-500 text-foreground font-bold px-10">
+      Contato
+    </Button>
+  );
+
   return (
     <div className="w-full flex items-center justify-center bg-ring">
-      {/*Mobile*/}
       <div className="mx-auto max-w-desktop px-10 py-5 flex justify-between items-center w-full">
         <Image
           alt="Logo"
@@ -47,8 +53,9 @@ const Navbar = () => {
           className="h-10 w-auto"
         />
 
+        {/*Mobile navbar*/}
         <Sheet>
-          <SheetTrigger>
+          <SheetTrigger className="tablet:hidden">
             <Menu size={32} className="text-secondary" />
           </SheetTrigger>
           <SheetContent>
@@ -56,7 +63,7 @@ const Navbar = () => {
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
 
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               {menuOptions.map((option, index) => (
                 <Link
                   href={option.route}
@@ -66,9 +73,23 @@ const Navbar = () => {
                   <p className="font-semibold">{option.title}</p>
                 </Link>
               ))}
+
+              {contactButton}
             </div>
           </SheetContent>
         </Sheet>
+
+        {/*Desktop navbar*/}
+
+        <div className="hidden tablet:flex gap-10 text-background ">
+          {menuOptions.map((option) => (
+            <Link href={option.route}>
+              <p className="font-light hover:scale-125">{option.title}</p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden tablet:block">{contactButton}</div>
       </div>
     </div>
   );
