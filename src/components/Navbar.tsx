@@ -43,7 +43,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full flex items-center justify-center bg-ring sticky top-0">
+    <div className="w-full flex items-center justify-center bg-ring sticky top-0 z-20">
       <div className="mx-auto max-w-desktop px-10 py-5 flex justify-between items-center w-full">
         <Image
           alt="Logo"
@@ -82,8 +82,8 @@ const Navbar = () => {
         {/*Desktop navbar*/}
 
         <div className="hidden tablet:flex gap-10 text-background ">
-          {menuOptions.map((option) => (
-            <Link href={option.route}>
+          {menuOptions.map((option, index) => (
+            <Link href={option.route} key={index}>
               <p className="font-light hover:scale-125">{option.title}</p>
             </Link>
           ))}
