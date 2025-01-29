@@ -1,5 +1,5 @@
 const Main = () => {
-  return <div>Main</div>;
+  return <div className="min-h-screen">Main</div>;
 };
 
 export default Main;
