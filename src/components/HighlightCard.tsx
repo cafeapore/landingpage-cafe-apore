@@ -12,7 +12,7 @@ type HighlightCardProps = {
 
 const HighlightCard = ({ data }: HighlightCardProps) => {
   return (
-    <Card className="bg-ring relative hover:scale-105 transition">
+    <Card className="bg-ring relative hover:scale-105 transition -z-10">
       <div className="absolute h-full w-full bg-gradient-to-t from-ring to-transparent rounded-lg" />
 
       <CardContent className="flex flex-col  h-full p-5 gap-2">
