@@ -10,8 +10,11 @@ import {
 } from "./ui/sheet";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   const menuOptions = [
     {
       title: "Início",
@@ -56,7 +59,7 @@ const Navbar = () => {
         />
 
         {/*Mobile navbar*/}
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger className="tablet:hidden">
             <Menu size={32} className="text-secondary" />
           </SheetTrigger>
@@ -67,13 +70,14 @@ const Navbar = () => {
 
             <div className="flex flex-col gap-2">
               {menuOptions.map((option, index) => (
-                <a
+                <Link
                   href={option.route}
                   key={index}
                   className="flex gap-2 p-2 border border-ring rounded"
+                  onClick={() => setOpen(false)}
                 >
                   <p className="font-semibold">{option.title}</p>
-                </a>
+                </Link>
               ))}
 
               {contactButton}
