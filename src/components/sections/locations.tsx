@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LocationsSection = () => {
   return (
-    <div
+    <section
       className="max-w-6xl flex flex-col tablet:flex-row justify-center items-center w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10"
       id="provinces"
     >
@@ -31,7 +31,7 @@ const LocationsSection = () => {
           <p className="text-center tablet:text-end">Iturama-MG</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

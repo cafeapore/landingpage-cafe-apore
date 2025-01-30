@@ -67,13 +67,13 @@ const Navbar = () => {
 
             <div className="flex flex-col gap-2">
               {menuOptions.map((option, index) => (
-                <Link
+                <a
                   href={option.route}
                   key={index}
                   className="flex gap-2 p-2 border border-ring rounded"
                 >
                   <p className="font-semibold">{option.title}</p>
-                </Link>
+                </a>
               ))}
 
               {contactButton}

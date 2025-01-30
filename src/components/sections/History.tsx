@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HistorySection = () => {
   return (
-    <div
+    <section
       className="max-w-6xl flex flex-col tablet:flex-row justify-center items-center w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10"
       id="about"
     >
@@ -47,7 +47,7 @@ const HistorySection = () => {
           levar o melhor café até você.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

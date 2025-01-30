@@ -1,3 +1,4 @@
+"use client";
 import HighlightCard from "../HighlightCard";
 
 const HighlightsSection = () => {
@@ -61,7 +62,7 @@ const HighlightsSection = () => {
   ];
 
   return (
-    <div
+    <section
       className="max-w-6xl flex flex-col w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10"
       id="products"
     >
@@ -75,7 +76,7 @@ const HighlightsSection = () => {
           <HighlightCard data={product} key={product.id} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <div className="w-full bg-ring/75 tablet:bg-ring/100 relative flex items-center justify-center  overflow-x-hidden min-h-[calc(100svh-5rem)]">
+    <section className="w-full bg-ring/75 tablet:bg-ring/100 relative flex items-center justify-center  overflow-x-hidden min-h-[calc(100svh-5rem)]">
       <div className="tablet:max-w-6xl flex w-full items-center">
         <div className="px-10 py-5 mx-auto flex flex-col items-center justify-center h-full flex-1 text-background capitalize font-bold">
           {/* Title */}
@@ -45,7 +45,7 @@ const HeroSection = () => {
           <div className="absolute bottom-0 left-0 bg-gradient-to-t from-ring to-transparent h-full w-full z-20"></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
