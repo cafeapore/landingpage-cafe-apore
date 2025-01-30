@@ -22,28 +22,29 @@ const HistorySection = () => {
         </div>
 
         <p className="text-justify">
-          Lorem ipsum dolor sit amet. Aut dolores soluta est fuga sequi qui
-          accusamus alias vel aliquid cupiditate. Eos odio ullam qui nihil
-          accusamus in voluptatibus assumenda et dolores nostrum qui atque
-          sequi. Ut aliquam quae aut natus laborum ea debitis eveniet vel quia
-          harum. Vel cumque excepturi sit ducimus doloribus non nisi
-          reprehenderit. Aut deleniti repellat qui facilis asperiores ut harum
-          cumque et modi rerum aut veritatis esse aut iste accusamus sit
-          deserunt repellat.
+          O Café Aporé tem suas raízes na tradição e na paixão pelo café.
+          Fundada no início da década de 1960 por famílias tradicionais de
+          Jales-SP, a empresa nasceu com o propósito de levar um café de
+          qualidade superior à mesa dos brasileiros. Com o passar dos anos, a
+          marca se consolidou no mercado e expandiu sua distribuição para mais
+          de 100 cidades, sempre mantendo seu compromisso com a excelência.
         </p>
 
         <p className="text-justify">
-          Ex odit asperiores qui quis cupiditate aut blanditiis asperiores aut
-          explicabo facilis id vitae magni. Ut voluptas dolor At porro dolor ut
-          tempore corporis. Et optio molestias qui maiores quia id eligendi sint
-          sit aliquam voluptatem est reprehenderit labore et consequuntur
-          facilis 33 corrupti itaque. Ea consequatur rerum aut placeat maiores
-          sit adipisci quia ut eaque voluptatibus cum nostrum quas Lorem ipsum
-          dolor sit amet. Aut dolores soluta est fuga sequi qui accusamus alias
-          vel aliquid cupiditate. Eos odio ullam qui nihil accusamus in
-          voluptatibus assumenda et dolores nostrum qui atque sequi. Ut aliquam
-          quae aut natus laborum ea debitis eveniet vel quia harum. Vel cumque
-          excepturi sit ducimus doloribus non nisi reprehenderit.
+          Há quase quatro décadas, o Café Aporé passou a ser administrado por
+          uma nova gestão, que manteve viva a essência artesanal da torrefação,
+          aliando inovação e tecnologia ao processo de produção. Hoje,
+          utilizamos equipamentos de alta tecnologia para garantir um café de
+          sabor inconfundível, preservando os aromas e características que fazem
+          do nosso produto uma referência no segmento.
+        </p>
+
+        <p className="text-justify">
+          Nosso compromisso com a qualidade é certificado pelo selo da
+          Associação Brasileira da Indústria de Café (ABIC), garantindo que cada
+          xícara de Café Aporé ofereça uma experiência única aos consumidores.
+          Com respeito e dedicação, seguimos aprimorando nossos processos para
+          levar o melhor café até você.
         </p>
       </div>
     </div>
