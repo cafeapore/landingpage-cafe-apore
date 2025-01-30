@@ -17,20 +17,18 @@ const LocationsSection = () => {
       </div>
 
       <div className="h-full w-full flex-1 space-y-5">
-        <div className="font-bold text-5xl border-r-2 border-red-700 pr-2">
-          <p className="text-end">Onde</p>
-          <p className="text-end">Servimos</p>
+        <div className="font-bold text-5xl border-x-2 tablet:border-l-0 border-red-700 pr-2">
+          <p className="text-center tablet:text-end">Regiões Onde</p>
+          <p className="text-center tablet:text-end">Servimos</p>
         </div>
 
-        <div className="grid grid-cols-4 text-xl">
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
-          <p className="text-end">Jales-SP</p>
+        <div className="grid grid-cols-2 text-xl">
+          <p className="text-center tablet:text-end">Santa Fé Do Sul</p>
+          <p className="text-center tablet:text-end">Jales-SP</p>
+          <p className="text-center tablet:text-end">Votuporanga-SP</p>
+          <p className="text-center tablet:text-end">Fernandópolis</p>
+          <p className="text-center tablet:text-end">Araçatuba-SP</p>
+          <p className="text-center tablet:text-end">Iturama-MG</p>
         </div>
       </div>
     </div>
