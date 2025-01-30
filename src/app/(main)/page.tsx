@@ -11,6 +11,7 @@ const Main = () => {
       <HistorySection />
       <Separator />
       <HighlightsSection />
+      <Separator />
       <LocationsSection />
     </div>
   );
