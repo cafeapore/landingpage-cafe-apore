@@ -61,7 +61,10 @@ const HighlightsSection = () => {
   ];
 
   return (
-    <div className="max-w-6xl flex flex-col w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10">
+    <div
+      className="max-w-6xl flex flex-col w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10"
+      id="products"
+    >
       <div className="font-bold text-5xl border-l-2 mr-auto border-red-700 pl-2 h-32">
         <p>Nossos</p>
         <p>Destaques</p>
