@@ -15,6 +15,11 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
             Do <span className="text-yellow-500">cotidiano</span> ao{" "}
             <span className="text-yellow-500">100%</span> arábico
           </p>
+
+          <p className="font-normal text-center tablet:text-end">
+            Desde 1962 unindo qualidade e produção, entregando produtos que
+            figuram entre os melhores do interior de São Paulo.
+          </p>
         </div>
 
         {/* video mobile */}

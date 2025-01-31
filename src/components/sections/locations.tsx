@@ -29,11 +29,6 @@ const LocationsSection = ({ locations }: { locations: LocationProps[] }) => {
               {location.text}
             </p>
           ))}
-          {/* <p className="text-center tablet:text-end">Jales-SP</p>
-          <p className="text-center tablet:text-end">Votuporanga-SP</p>
-          <p className="text-center tablet:text-end">Fernandópolis</p>
-          <p className="text-center tablet:text-end">Araçatuba-SP</p>
-          <p className="text-center tablet:text-end">Iturama-MG</p> */}
         </div>
       </div>
     </section>
