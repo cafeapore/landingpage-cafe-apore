@@ -34,6 +34,8 @@ const BlogPage = () => {
             </p>
           </div>
 
+          <Separator className="block tablet:hidden" />
+
           <div className="flex-1 space-y-2">
             <NewsCard />
             <NewsCard />
