@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Separator } from "../landingPage/ui/separator";
+import { Separator } from "../ui/separator";
 import { Input } from "../ui/input";
-import { Button } from "../landingPage/ui/button";
+import { Button } from "../ui/button";
 import { Search } from "lucide-react";
 
 const NavbarBlog = () => {

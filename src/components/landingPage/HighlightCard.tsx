@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../ui/card";
 import { ProductsProps } from "@/types/cms";
 
 type HighlightCardProps = {

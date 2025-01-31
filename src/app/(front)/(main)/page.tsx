@@ -5,7 +5,7 @@ import HeroSection from "@/components/landingPage/sections/Hero";
 import HighlightsSection from "@/components/landingPage/sections/Highlights";
 import HistorySection from "@/components/landingPage/sections/History";
 import LocationsSection from "@/components/landingPage/sections/locations";
-import { Separator } from "@/components/landingPage/ui/separator";
+import { Separator } from "@/components/ui/separator";
 
 const Main = async () => {
   const landingPageData = await getLandingPageData();
