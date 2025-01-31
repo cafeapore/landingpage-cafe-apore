@@ -1,4 +1,6 @@
-const HeroSection = () => {
+"use client";
+
+const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
   return (
     <section className="w-full bg-ring/75 tablet:bg-ring/100 relative flex items-center justify-center  overflow-hidden min-h-[calc(100svh-5rem)]">
       <div className="tablet:max-w-6xl flex w-full items-center">
@@ -23,7 +25,7 @@ const HeroSection = () => {
           muted
           className="absolute tablet:hidden tablet:static -z-10 w-auto min-w-full min-h-full max-w-none"
         >
-          <source src="/coffee-footage.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
