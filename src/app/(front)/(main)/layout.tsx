@@ -1,8 +1,6 @@
 "use client";
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import NavbarScroll from "@/components/NavbarScroll";
 import Lenis from "@studio-freight/lenis";
 import { ReactNode, useEffect } from "react";
 
@@ -28,7 +26,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Navbar />
-      <NavbarScroll />
+
       {children}
       <Footer />
     </>

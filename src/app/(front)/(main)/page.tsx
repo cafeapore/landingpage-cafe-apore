@@ -1,5 +1,6 @@
 "use server";
 import { getLandingPageData } from "@/actions/landingPage/getData";
+import NavbarScroll from "@/components/NavbarScroll";
 import HeroSection from "@/components/sections/Hero";
 import HighlightsSection from "@/components/sections/Highlights";
 import HistorySection from "@/components/sections/History";
@@ -11,6 +12,7 @@ const Main = async () => {
 
   return (
     <div>
+      <NavbarScroll />
       <HeroSection videoUrl={landingPageData.heroVideo} />
       <Separator />
       <HistorySection textData={landingPageData.history} />

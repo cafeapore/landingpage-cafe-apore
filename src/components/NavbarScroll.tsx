@@ -37,12 +37,12 @@ const NavbarScroll = () => {
 
   const scrollNav = () => {
     var y = window.scrollY;
-    if (y >= 100) {
-      navbarRef!.current!.classList.add("block");
-      navbarRef!.current!.classList.remove("hidden");
+    if (y >= 400) {
+      navbarRef!.current!.classList.add("opacity-100");
+      navbarRef!.current!.classList.remove("opacity-0");
     } else {
-      navbarRef!.current!.classList.add("hidden");
-      navbarRef!.current!.classList.remove("block");
+      navbarRef!.current!.classList.add("opacity-0");
+      navbarRef!.current!.classList.remove("opacity-100");
     }
   };
 
@@ -52,7 +52,7 @@ const NavbarScroll = () => {
 
   return (
     <div
-      className="top-0 sticky transition hidden z-[100]"
+      className="top-0 left-0 fixed w-full transition z-[100]"
       id="hero"
       ref={navbarRef}
     >
