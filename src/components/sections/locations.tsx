@@ -1,6 +1,7 @@
+import { LocationProps } from "@/types/cms";
 import Image from "next/image";
 
-const LocationsSection = () => {
+const LocationsSection = ({ locations }: { locations: LocationProps[] }) => {
   return (
     <section
       className="max-w-6xl flex flex-col tablet:flex-row justify-center items-center w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10"
@@ -23,12 +24,16 @@ const LocationsSection = () => {
         </div>
 
         <div className="grid grid-cols-2 text-xl">
-          <p className="text-center tablet:text-end">Santa Fé Do Sul</p>
-          <p className="text-center tablet:text-end">Jales-SP</p>
+          {locations.map((location) => (
+            <p className="text-center tablet:text-end" key={location.id}>
+              {location.text}
+            </p>
+          ))}
+          {/* <p className="text-center tablet:text-end">Jales-SP</p>
           <p className="text-center tablet:text-end">Votuporanga-SP</p>
           <p className="text-center tablet:text-end">Fernandópolis</p>
           <p className="text-center tablet:text-end">Araçatuba-SP</p>
-          <p className="text-center tablet:text-end">Iturama-MG</p>
+          <p className="text-center tablet:text-end">Iturama-MG</p> */}
         </div>
       </div>
     </section>

@@ -49,7 +49,7 @@ export const LandingPage: GlobalConfig = {
       fields: [
         {
           type: "text",
-          name: "location",
+          name: "text",
           label: "Nome da Localização",
         },
       ],
