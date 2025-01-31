@@ -9,8 +9,21 @@ export const LandingPage: GlobalConfig = {
       name: "heroVideo",
       type: "text",
       required: true,
-
       label: "Vídeo da Primeira Seção",
+      validate: (value: any) => {
+        const urlPattern = new RegExp(
+          "^(https?:\\/\\/)?" + // Validate protocol (http or https)
+            "((([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,})|" + // Domain name
+            "(\\:\\d+)?(\\/[-a-zA-Z0-9@:%._+~#=]*)*" + // Port and path
+            "(\\?[;&a-zA-Z0-9@:%_+.~#?&//=]*)?" + // Query string
+            "i"
+        );
+
+        if (!value.match(urlPattern)) {
+          return "URL Inválida";
+        }
+        return true;
+      },
     },
     {
       name: "history",

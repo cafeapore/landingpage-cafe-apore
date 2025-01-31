@@ -9,11 +9,10 @@ import { Separator } from "@/components/ui/separator";
 const Main = async () => {
   const landingPageData = await getLandingPageData();
 
-  console.log(landingPageData.products);
-
   return (
     <div>
       <HeroSection videoUrl={landingPageData.heroVideo} />
+      <Separator />
       <HistorySection textData={landingPageData.history} />
       <Separator />
       <HighlightsSection products={landingPageData.products} />
