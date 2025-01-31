@@ -6,8 +6,8 @@ import { Search } from "lucide-react";
 
 const NavbarBlog = () => {
   return (
-    <nav className="h-20 px-10 py-5">
-      <div className="max-w-screen-desktop w-full mx-auto flex items-center gap-5 justify-between">
+    <nav className="h-full tablet:h-20 px-5 py-5">
+      <div className="max-w-screen-desktop w-full mx-auto flex flex-col tablet:flex-row items-center gap-5 justify-between">
         <div className="flex items-center gap-1">
           <p className="-rotate-90">Blog</p>
           <Separator orientation="vertical" className="h-20 w-1 bg-red-500" />
@@ -22,7 +22,7 @@ const NavbarBlog = () => {
 
         <div className="flex w-full justify-center">
           <Input
-            className="border-ring max-w-80 rounded-r-none"
+            className="border-ring tablet:max-w-80 rounded-r-none"
             placeholder="Buscar"
           />
 
@@ -34,7 +34,7 @@ const NavbarBlog = () => {
           </Button>
         </div>
 
-        <Button className="text-ring font-semibold bg-yellow-500 px-10">
+        <Button className="text-ring font-semibold bg-yellow-500 px-10 w-full tablet:w-min">
           Site
         </Button>
       </div>
