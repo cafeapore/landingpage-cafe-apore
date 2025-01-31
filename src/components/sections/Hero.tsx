@@ -16,7 +16,7 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
             <span className="text-yellow-500">100%</span> arábico
           </p>
 
-          <p className="font-normal text-center tablet:text-end">
+          <p className="font-normal text-center tablet:text-end normal-case">
             Desde 1962 unindo qualidade e produção, entregando produtos que
             figuram entre os melhores do interior de São Paulo.
           </p>
@@ -28,7 +28,7 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
           autoPlay
           loop
           muted
-          className="absolute tablet:hidden tablet:static -z-10 w-auto min-w-full min-h-full max-w-none"
+          className="absolute tablet:hidden  -z-10 w-auto min-w-full min-h-full max-w-none"
         >
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
@@ -36,14 +36,18 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
 
         {/* video desktop */}
 
-        <div className="flex-1 min-h-[calc(100svh-5rem)] relative w-full hidden tablet:block">
+        <div className="flex-1 min-h-[calc(100svh-5rem)] relative w-full hidden tablet:block ">
+          <p className="absolute text-center mx-auto bottom-5 font-light z-50 text-background w-full">
+            Conheça nossa produção em Jales-SP
+          </p>
+
           <video
             autoPlay
             loop
             muted
             className="absolute w-full h-full object-cover z-10 top-0 left-0 rounded-tl-2xl"
           >
-            <source src="/coffee-footage.mp4" type="video/mp4" />
+            <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
