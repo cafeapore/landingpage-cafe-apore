@@ -2,13 +2,16 @@ import sharp from "sharp";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
+import { LandingPage } from "@/app/(payload)/collections/LandingPage";
+import { Media } from "@/app/(payload)/collections/Media";
+import { pt } from "@payloadcms/translations/languages/pt";
 
 export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor(),
 
   // Define and configure your collections in this array
-  collections: [],
+  collections: [LandingPage, Media],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || "",
@@ -22,4 +25,7 @@ export default buildConfig({
   // This is optional - if you don't need to do these things,
   // you don't need it!
   sharp,
+  i18n: {
+    supportedLanguages: { pt },
+  },
 });
