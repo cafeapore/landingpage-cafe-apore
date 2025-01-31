@@ -59,8 +59,6 @@ body {
   }
 
   body {
-    --scroll-behavior: smooth !important;
-    scroll-behavior: smooth !important;
     @apply bg-background text-foreground;
   }
 }
