@@ -1,3 +1,4 @@
+import { validatePayloadURL } from "@/utils/validatePayloadURL";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { GlobalConfig } from "payload";
 
@@ -9,8 +10,8 @@ export const LandingPage: GlobalConfig = {
       name: "heroVideo",
       type: "text",
       required: true,
-
       label: "Vídeo da Primeira Seção",
+      validate: validatePayloadURL,
     },
     {
       name: "history",
@@ -28,6 +29,7 @@ export const LandingPage: GlobalConfig = {
           type: "text",
           name: "image",
           label: "Imagem",
+          validate: validatePayloadURL,
         },
         {
           type: "text",
