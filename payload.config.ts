@@ -8,10 +8,11 @@ import { pt } from "@payloadcms/translations/languages/pt";
 
 export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
-  editor: lexicalEditor(),
+  editor: lexicalEditor({}),
 
   // Define and configure your collections in this array
-  collections: [LandingPage, Media],
+  globals: [LandingPage],
+  collections: [Media],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || "",

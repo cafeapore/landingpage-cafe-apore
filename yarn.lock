@@ -1678,7 +1678,7 @@
     "@payloadcms/translations" "3.20.0"
     "@payloadcms/ui" "3.20.0"
 
-"@payloadcms/richtext-lexical@latest":
+"@payloadcms/richtext-lexical@^3.20.0":
   version "3.20.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/richtext-lexical/-/richtext-lexical-3.20.0.tgz#1fb376b631d8b75ca9163f4d879100fe8dab2f7b"
   integrity sha512-swmdm9/m5lblCUTZRi9FA44Ahil9URg5Wvw6naReIt6qGx/xakaSISPSfcu2fjQP2lKyjYsx9QBhB9sdd3aeJw==
