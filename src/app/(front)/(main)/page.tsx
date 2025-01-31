@@ -14,7 +14,7 @@ const Main = async () => {
       <HeroSection videoUrl={landingPageData.heroVideo} />
       <HistorySection textData={landingPageData.history} />
       <Separator />
-      <HighlightsSection />
+      <HighlightsSection products={landingPageData.products} />
       <Separator />
       <LocationsSection />
     </div>

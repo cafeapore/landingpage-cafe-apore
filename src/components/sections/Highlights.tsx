@@ -1,66 +1,12 @@
 "use client";
+import { ProductsProps } from "@/types/cms";
 import HighlightCard from "../HighlightCard";
 
-const HighlightsSection = () => {
-  const products = [
-    {
-      id: "1",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "2",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "3",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "4",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "5",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "6",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "7",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-    {
-      id: "8",
-      title: "Nome do produto 500g",
-      image: "/coffee.png",
-      description:
-        "Lorem ipsum dolor sit amet. Sed optio incidunt ab aspernatur internos aut impedit distinctio At iusto perferendis et saepe porro vel omnis possimus?",
-    },
-  ];
+type HighlightsSectionProps = {
+  products: ProductsProps[];
+};
 
+const HighlightsSection = ({ products }: HighlightsSectionProps) => {
   return (
     <section
       className="max-w-6xl flex flex-col w-full h-full flex-1 min-h-svh mx-auto p-10 tablet:px-0 gap-10"
@@ -73,7 +19,7 @@ const HighlightsSection = () => {
 
       <div className="grid grid-cols-2 tablet:grid-cols-4 gap-5">
         {products.map((product) => (
-          <HighlightCard data={product} key={product.id} />
+          <HighlightCard product={product} key={product.id} />
         ))}
       </div>
     </section>
