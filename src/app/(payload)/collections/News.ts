@@ -1,6 +1,7 @@
 import { genSlug } from "@/utils/genSlug";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { CollectionConfig } from "payload";
+import { v4 as uuidv4 } from "uuid";
 
 export const News: CollectionConfig = {
   slug: "news",
@@ -59,7 +60,9 @@ export const News: CollectionConfig = {
   hooks: {
     beforeChange: [
       ({ data }) => {
-        data.slug = genSlug(data.title);
+        if (!data.slug) {
+          data.slug = genSlug(`${data.title}-${uuidv4().slice(0, 10)}`);
+        }
 
         return data;
       },
