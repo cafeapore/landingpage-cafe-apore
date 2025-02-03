@@ -13,7 +13,7 @@ const MainNewsCard = ({ data }: MainNewsCard) => {
       href={`/blog/${data.slug}`}
       className="flex-1 w-full h-full group cursor-default"
     >
-      <div className="h-[50svh] max-h-[450px] w-full relative">
+      <div className="h-[50svh] tablet:max-h-[350px] w-full relative">
         <Image
           alt="Hightlight"
           src={`${data.image.url}`}
