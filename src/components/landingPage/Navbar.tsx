@@ -39,9 +39,14 @@ const Navbar = () => {
   ];
 
   const contactButton = (
-    <Button className="bg-yellow-500 text-foreground font-bold px-10">
-      Contato
-    </Button>
+    <Link
+      href="https://api.whatsapp.com/send?phone=5517981643029"
+      target="_blank"
+    >
+      <Button className="bg-yellow-500 text-foreground font-bold px-10">
+        Contato
+      </Button>
+    </Link>
   );
 
   return (
