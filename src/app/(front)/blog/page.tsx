@@ -8,25 +8,29 @@ import { Separator } from "@/components/ui/separator";
 type BlogPage = {
   searchParams?: Promise<{
     page: number | null;
+    query: string;
   }>;
 };
 
 const BlogPage = async ({ searchParams }: BlogPage) => {
   const sParams = await searchParams;
   const page = Number(sParams?.page) || 1;
+  const query = sParams?.query;
 
   const mainNews = await getMainNewsData();
-  const news = await getNewsData({ page });
+  const news = await getNewsData({ page, query });
 
   return (
     <div className="min-h-[calc(100svh-10rem)] w-full py-5 h-full flex items-center">
       <div className="max-w-screen-desktop mx-auto h-full w-full flex items-center justify-center flex-col gap-5 px-5">
-        <p className="text-center text-2xl font-semibold text-ring">
-          Últimas Notícias
-        </p>
+        {!query && (
+          <p className="text-center text-2xl font-semibold text-ring">
+            Últimas Notícias
+          </p>
+        )}
 
         <div className="flex flex-col items-start tablet:flex-row gap-10 h-full">
-          <MainNewsCard data={mainNews} />
+          {!query && <MainNewsCard data={mainNews} />}
 
           <Separator className="block tablet:hidden" />
 
@@ -37,13 +41,17 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
 
             <Separator />
 
-            <div className="flex  justify-around tablet:justify-end w-full gap-5">
-              <Paginate
-                hasNextPage={news.hasNextPage}
-                hasPrevPage={news.hasPrevPage}
-                currentPage={page}
-              />
-            </div>
+            {news.docs.length ? (
+              <div className="flex  justify-around tablet:justify-end w-full gap-5">
+                <Paginate
+                  hasNextPage={news.hasNextPage}
+                  hasPrevPage={news.hasPrevPage}
+                  currentPage={page}
+                />
+              </div>
+            ) : (
+              <p>Nada encontrado.</p>
+            )}
           </div>
         </div>
       </div>
