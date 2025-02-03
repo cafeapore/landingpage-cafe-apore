@@ -1,3 +1,6 @@
+import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
+import { Media } from "payload/generated-types";
+
 export type LandingPageData = {
   id: string | number;
   heroVideo: string;
@@ -16,4 +19,12 @@ export type ProductsProps = {
 export type LocationProps = {
   id: string;
   text: string;
+};
+
+export type MainNews = {
+  id: string;
+  image: Media;
+  content: SerializedEditorState;
+  description: string;
+  title: string;
 };
