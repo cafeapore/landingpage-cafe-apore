@@ -19,18 +19,18 @@ const MainNewsCard = ({ data }: MainNewsCard) => {
           src={`${data.image.url}`}
           height={1000}
           width={1000}
-          className="h-full w-full object-cover absolute rounded tablet:rounded-br-[10rem] group-hover:scale-105 transition"
+          className="h-full w-full object-cover absolute rounded tablet:rounded-br-[10rem] tablet:group-hover:scale-105 transition"
         />
       </div>
 
-      <p className="font-semibold text-ring group-hover:translate-y-2 group-hover:-translate-x-4 transition">
+      <p className="font-semibold text-ring tablet:group-hover:translate-y-2 transition">
         {data.title} |{" "}
         <span className="text-ring/50">
           {format(data.createdAt, "dd/MM/yyyy")}
         </span>
       </p>
 
-      <p className="text-sm text-justify text-ring group-hover:translate-y-2 group-hover:-translate-x-4 transition">
+      <p className="text-sm text-justify text-ring tablet:group-hover:translate-y-2  transition">
         {data.description}
       </p>
     </Link>
