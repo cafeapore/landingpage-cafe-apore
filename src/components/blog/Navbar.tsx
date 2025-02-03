@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const NavbarBlog = () => {
   return (
-    <nav className="h-full tablet:h-20 px-5 py-5">
+    <nav className="h-full px-5 py-5 sticky top-0 bg-background/50 backdrop-blur-sm z-50">
       <div className="max-w-screen-desktop w-full mx-auto flex flex-col tablet:flex-row items-center gap-5 justify-between">
         <div className="flex justify-between items-center w-full">
           <Link href="/blog">
@@ -14,7 +14,7 @@ const NavbarBlog = () => {
               <p className="-rotate-90">Blog</p>
               <Separator
                 orientation="vertical"
-                className="h-20 w-1 bg-red-500"
+                className="h-10 w-1 bg-red-500"
               />
               <Image
                 alt="Logo"

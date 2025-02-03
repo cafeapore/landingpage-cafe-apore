@@ -19,7 +19,7 @@ const NewsPage = async ({ params }: NewsPageProps) => {
   }
 
   return (
-    <div className="max-w-screen-desktop mx-auto px-5">
+    <div className="max-w-screen-desktop mx-auto p-5">
       <p className="text-2xl font-semibold">{docs[0].title}</p>
       <RichText data={docs[0].content} />
     </div>
