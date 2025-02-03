@@ -9,7 +9,7 @@ type MainNewsCard = {
 const MainNewsCard = ({ data }: MainNewsCard) => {
   return (
     <div className="flex-1 w-full h-full group cursor-default">
-      <div className="h-full w-full relative min-h-[400px]">
+      <div className="h-[50svh] max-h-[450px] w-full relative">
         <Image
           alt="Hightlight"
           src={`${data.image.url}`}

@@ -14,7 +14,7 @@ const NewsCard = ({ data }: NewsCardProps) => {
         alt="Imagem Notícia"
         height={1000}
         width={1000}
-        className="w-40 h-40 rounded object-cover group-hover:scale-105 transition"
+        className="h-40 w-40 tablet:w-[18svh] tablet:h-[18svh] max-h-40 max-w-40 rounded object-cover group-hover:scale-105 transition"
       />
 
       <div className="group-hover:translate-x-2 transition">
