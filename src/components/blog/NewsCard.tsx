@@ -11,14 +11,14 @@ const NewsCard = ({ data }: NewsCardProps) => {
   return (
     <Link
       href={`/blog/${data.slug}`}
-      className="flex gap-2 group cursor-default"
+      className="flex flex-col mobile:flex-row gap-2 group cursor-default"
     >
       <Image
         src={data.image.url}
         alt="Imagem Notícia"
         height={1000}
         width={1000}
-        className="h-40 w-40 tablet:w-[18svh] tablet:h-[18svh] max-h-40 max-w-40 rounded object-cover tablet:group-hover:scale-105 transition"
+        className="w-full h-64 tablet:w-32 tablet:h-32 rounded object-cover tablet:group-hover:scale-105 transition"
       />
 
       <div className="tablet:group-hover:translate-x-2 transition">
