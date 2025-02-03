@@ -1,24 +1,30 @@
+import { News } from "@/types/cms";
+import { format } from "date-fns";
 import Image from "next/image";
 
-const NewsCard = () => {
+type NewsCardProps = {
+  data: News;
+};
+
+const NewsCard = ({ data }: NewsCardProps) => {
   return (
     <div className="flex gap-2">
       <Image
-        src="/pic-1.png"
+        src={data.image.url}
         alt="Imagem Notícia"
         height={1000}
         width={1000}
-        className="min-w-40 max-h-52 rounded object-cover"
+        className="w-40 h-40 rounded object-cover"
       />
 
       <div>
-        <p className="font-semibold text-ring">Título Notícia</p>
-        <p className="text-sm text-justify text-ring">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tristique accumsan vestibulum. Aliquam laoreet ac tellus non
-          hendrerit. Phasellus sed commodo urna, quis aliquam odio. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit.
+        <p className="font-semibold text-ring">
+          {data.title} |{" "}
+          <span className="text-ring/50">
+            {format(data.createdAt, "dd/MM/yyyy")}
+          </span>
         </p>
+        <p className="text-sm text-justify text-ring">{data.description}</p>
       </div>
     </div>
   );

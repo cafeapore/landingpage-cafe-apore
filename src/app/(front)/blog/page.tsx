@@ -1,14 +1,22 @@
 import { getMainNewsData } from "@/actions/news/getMainNews";
+import { getNewsData } from "@/actions/news/getNews";
 import MainNewsCard from "@/components/blog/MainNewsCard";
 import NewsCard from "@/components/blog/NewsCard";
-import { Button } from "@/components/ui/button";
+import Paginate from "@/components/blog/Paginate";
 import { Separator } from "@/components/ui/separator";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const BlogPage = async () => {
+type BlogPage = {
+  searchParams?: Promise<{
+    page: number | null;
+  }>;
+};
+
+const BlogPage = async ({ searchParams }: BlogPage) => {
+  const sParams = await searchParams;
+  const page = Number(sParams?.page) || 1;
+
   const mainNews = await getMainNewsData();
-
-  console.log(mainNews.image);
+  const news = await getNewsData({ page });
 
   return (
     <div className="min-h-[calc(100svh-10rem)] w-full py-5 h-full flex items-center">
@@ -23,20 +31,18 @@ const BlogPage = async () => {
           <Separator className="block tablet:hidden" />
 
           <div className="flex-1 space-y-2">
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
+            {news.docs.map((data) => (
+              <NewsCard data={data} key={data.id} />
+            ))}
 
             <Separator />
 
             <div className="flex  justify-around tablet:justify-end w-full gap-5">
-              <Button className="px-10 tablet:px-4">
-                <ChevronLeft />
-              </Button>
-
-              <Button className="px-10 tablet:px-4">
-                <ChevronRight />
-              </Button>
+              <Paginate
+                hasNextPage={news.hasNextPage}
+                hasPrevPage={news.hasPrevPage}
+                currentPage={page}
+              />
             </div>
           </div>
         </div>
