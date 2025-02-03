@@ -7,11 +7,13 @@ import { pt } from "@payloadcms/translations/languages/pt";
 import { MainNews } from "@/app/(payload)/collections/MainNews";
 import { Media } from "@/app/(payload)/collections/Media";
 import { uploadthingStorage } from "@payloadcms/storage-uploadthing";
+import { News } from "@/app/(payload)/collections/News";
 
 export default buildConfig({
   editor: lexicalEditor({}),
+  globals: [LandingPage, MainNews],
 
-  collections: [Media],
+  collections: [Media, News],
 
   upload: {
     limits: {
@@ -30,8 +32,6 @@ export default buildConfig({
       },
     }),
   ],
-
-  globals: [LandingPage, MainNews],
 
   secret: process.env.PAYLOAD_SECRET || "",
 
