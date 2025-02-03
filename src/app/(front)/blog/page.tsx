@@ -1,4 +1,3 @@
-import { getMainNewsData } from "@/actions/news/getMainNews";
 import { getNewsData } from "@/actions/news/getNews";
 import MainNewsCard from "@/components/blog/MainNewsCard";
 import NewsCard from "@/components/blog/NewsCard";
@@ -17,8 +16,41 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
   const page = Number(sParams?.page) || 1;
   const query = sParams?.query;
 
-  const mainNews = await getMainNewsData();
-  const news = await getNewsData({ page, query });
+  const mainNews = await getNewsData({
+    page: 0,
+    where: {
+      main: {
+        equals: true,
+      },
+    },
+  });
+
+  const news = await getNewsData({
+    page,
+    where: {
+      and: [
+        {
+          or: [
+            {
+              title: {
+                like: query,
+              },
+            },
+            {
+              description: {
+                like: query,
+              },
+            },
+          ],
+        },
+        {
+          main: {
+            equals: false,
+          },
+        },
+      ],
+    },
+  });
 
   return (
     <div className="min-h-[calc(100svh-10rem)] w-full py-5 h-full flex items-center">
@@ -30,7 +62,7 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
         )}
 
         <div className="flex flex-col items-start tablet:flex-row gap-10 h-full">
-          {!query && <MainNewsCard data={mainNews} />}
+          {!query && <MainNewsCard data={mainNews.docs[0]} />}
 
           <Separator className="block tablet:hidden" />
 

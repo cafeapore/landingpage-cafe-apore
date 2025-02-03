@@ -1,6 +1,7 @@
 import { MainNews } from "@/types/cms";
 import { format } from "date-fns";
 import Image from "next/image";
+import Link from "next/link";
 
 type MainNewsCard = {
   data: MainNews;
@@ -8,7 +9,10 @@ type MainNewsCard = {
 
 const MainNewsCard = ({ data }: MainNewsCard) => {
   return (
-    <div className="flex-1 w-full h-full group cursor-default">
+    <Link
+      href={`/blog/${data.slug}`}
+      className="flex-1 w-full h-full group cursor-default"
+    >
       <div className="h-[50svh] max-h-[450px] w-full relative">
         <Image
           alt="Hightlight"
@@ -29,7 +33,7 @@ const MainNewsCard = ({ data }: MainNewsCard) => {
       <p className="text-sm text-justify text-ring group-hover:translate-y-2 group-hover:-translate-x-4 transition">
         {data.description}
       </p>
-    </div>
+    </Link>
   );
 };
 

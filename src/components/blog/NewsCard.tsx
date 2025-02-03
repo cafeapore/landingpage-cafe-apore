@@ -1,6 +1,7 @@
 import { News } from "@/types/cms";
 import { format } from "date-fns";
 import Image from "next/image";
+import Link from "next/link";
 
 type NewsCardProps = {
   data: News;
@@ -8,7 +9,10 @@ type NewsCardProps = {
 
 const NewsCard = ({ data }: NewsCardProps) => {
   return (
-    <div className="flex gap-2 group cursor-default">
+    <Link
+      href={`/blog/${data.slug}`}
+      className="flex gap-2 group cursor-default"
+    >
       <Image
         src={data.image.url}
         alt="Imagem Notícia"
@@ -26,7 +30,7 @@ const NewsCard = ({ data }: NewsCardProps) => {
         </p>
         <p className="text-sm text-justify text-ring">{data.description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
