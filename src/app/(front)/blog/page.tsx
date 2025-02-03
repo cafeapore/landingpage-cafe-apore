@@ -54,7 +54,7 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
 
   return (
     <div className="min-h-[calc(100svh-10rem)] w-full py-5 h-full flex items-center">
-      <div className="max-w-screen-desktop mx-auto h-full w-full flex items-center justify-center flex-col gap-5 px-5">
+      <div className="max-w-screen-xl mx-auto h-full w-full flex items-center justify-center flex-col gap-5 px-5">
         {!query && (
           <p className="text-center text-2xl font-semibold text-ring">
             Últimas Notícias
