@@ -29,3 +29,12 @@ export type MainNews = {
   title: string;
   createdAt: string;
 };
+
+export type News = {
+  id: string;
+  image: Media;
+  content: SerializedEditorState;
+  description: string;
+  title: string;
+  createdAt: string;
+};
