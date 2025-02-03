@@ -28,7 +28,7 @@ const Paginate = ({ hasNextPage, hasPrevPage, currentPage }: PaginateProps) => {
   };
 
   return (
-    <>
+    <div className="flex items-center justify-between gap-5">
       <Button
         className="px-10 tablet:px-4"
         disabled={!hasPrevPage}
@@ -37,6 +37,8 @@ const Paginate = ({ hasNextPage, hasPrevPage, currentPage }: PaginateProps) => {
         <ChevronLeft />
       </Button>
 
+      <p className="text-lg font-semibold text-ring">{currentPage}</p>
+
       <Button
         className="px-10 tablet:px-4"
         disabled={!hasNextPage}
@@ -44,7 +46,7 @@ const Paginate = ({ hasNextPage, hasPrevPage, currentPage }: PaginateProps) => {
       >
         <ChevronRight />
       </Button>
-    </>
+    </div>
   );
 };
 
