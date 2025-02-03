@@ -1,35 +1,20 @@
 import { payload } from "@/lib/payload";
 import { News } from "@/types/cms";
-import { PaginatedDocs } from "payload";
+import { PaginatedDocs, Where } from "payload";
 
 type GetNewsData = {
   page: number;
-  query?: string;
+  where?: Where;
 };
 
 export const getNewsData = async ({
   page,
-  query,
+  where,
 }: GetNewsData): Promise<PaginatedDocs<News>> => {
   return (await payload.find({
     collection: "news",
     limit: 3,
     page,
-    ...(query && {
-      where: {
-        or: [
-          {
-            title: {
-              like: query,
-            },
-          },
-          {
-            description: {
-              like: query,
-            },
-          },
-        ],
-      },
-    }),
+    where,
   })) as PaginatedDocs<News>;
 };

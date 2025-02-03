@@ -4,14 +4,13 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
 import { LandingPage } from "@/app/(payload)/collections/LandingPage";
 import { pt } from "@payloadcms/translations/languages/pt";
-import { MainNews } from "@/app/(payload)/collections/MainNews";
 import { Media } from "@/app/(payload)/collections/Media";
 import { uploadthingStorage } from "@payloadcms/storage-uploadthing";
 import { News } from "@/app/(payload)/collections/News";
 
 export default buildConfig({
   editor: lexicalEditor({}),
-  globals: [LandingPage, MainNews],
+  globals: [LandingPage],
 
   collections: [Media, News],
 

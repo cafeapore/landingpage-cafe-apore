@@ -1,3 +1,4 @@
+import { genSlug } from "@/utils/genSlug";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { CollectionConfig } from "payload";
 
@@ -10,6 +11,7 @@ export const News: CollectionConfig = {
   fields: [
     {
       name: "image",
+      label: "Imagem",
       type: "upload",
       relationTo: "media",
       required: true,
@@ -20,6 +22,7 @@ export const News: CollectionConfig = {
       label: "Título",
       required: true,
     },
+
     {
       name: "description",
       type: "text",
@@ -32,6 +35,14 @@ export const News: CollectionConfig = {
       label: "Conteúdo",
       type: "richText",
       editor: lexicalEditor({}),
+    },
+    {
+      name: "main",
+      type: "checkbox",
+      label: "Principal",
+      admin: {
+        position: "sidebar",
+      },
     },
     {
       name: "slug",
@@ -48,7 +59,7 @@ export const News: CollectionConfig = {
   hooks: {
     beforeChange: [
       ({ data }) => {
-        data.slug = data.title.toLowerCase().replace(/\s+/g, "-");
+        data.slug = genSlug(data.title);
 
         return data;
       },
