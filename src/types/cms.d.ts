@@ -27,4 +27,5 @@ export type MainNews = {
   content: SerializedEditorState;
   description: string;
   title: string;
+  createdAt: string;
 };

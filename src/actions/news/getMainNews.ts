@@ -12,6 +12,7 @@ export const getMainNewsData = async (): Promise<MainNews> => {
       content: true,
       description: true,
       title: true,
+      createdAt: true,
     },
   })) as MainNews;
 };

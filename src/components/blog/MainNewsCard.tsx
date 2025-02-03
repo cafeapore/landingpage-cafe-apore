@@ -1,4 +1,5 @@
 import { MainNews } from "@/types/cms";
+import { format } from "date-fns";
 import Image from "next/image";
 
 type MainNewsCard = {
@@ -18,7 +19,12 @@ const MainNewsCard = ({ data }: MainNewsCard) => {
         />
       </div>
 
-      <p className="font-semibold text-ring">{data.title}</p>
+      <p className="font-semibold text-ring">
+        {data.title} |{" "}
+        <span className="text-ring/50">
+          {format(data.createdAt, "dd/MM/yyyy")}
+        </span>
+      </p>
 
       <p className="text-sm text-justify text-ring">{data.description}</p>
     </div>
