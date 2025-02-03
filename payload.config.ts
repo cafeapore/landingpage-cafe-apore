@@ -4,26 +4,43 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
 import { LandingPage } from "@/app/(payload)/collections/LandingPage";
 import { pt } from "@payloadcms/translations/languages/pt";
+import { MainNews } from "@/app/(payload)/collections/MainNews";
+import { Media } from "@/app/(payload)/collections/Media";
+import { uploadthingStorage } from "@payloadcms/storage-uploadthing";
 
 export default buildConfig({
-  // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor({}),
 
-  // Define and configure your collections in this array
-  globals: [LandingPage],
+  collections: [Media],
 
-  // Your Payload secret - should be a complex and secure string, unguessable
+  upload: {
+    limits: {
+      fileSize: 1000000,
+    },
+  },
+
+  plugins: [
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN,
+        acl: "public-read",
+      },
+    }),
+  ],
+
+  globals: [LandingPage, MainNews],
+
   secret: process.env.PAYLOAD_SECRET || "",
-  // Whichever Database Adapter you're using should go here
-  // Mongoose is shown as an example, but you can also use Postgres
+
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || "",
   }),
-  // If you want to resize images, crop, set focal point, etc.
-  // make sure to install it and pass it to the config.
-  // This is optional - if you don't need to do these things,
-  // you don't need it!
+
   sharp,
+
   i18n: {
     supportedLanguages: { pt },
   },
