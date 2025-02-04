@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const NavbarBlog = () => {
   return (
-    <nav className="h-full px-5 py-5 sticky top-0 bg-background/50 backdrop-blur-sm z-50">
+    <nav className="h-full px-5 py-5 sticky top-0 bg-background/75 backdrop-blur-sm z-50">
       <div className="max-w-screen-desktop w-full mx-auto flex flex-col tablet:flex-row items-center gap-5 justify-between">
         <div className="flex justify-between items-center w-full">
           <Link href="/blog">
