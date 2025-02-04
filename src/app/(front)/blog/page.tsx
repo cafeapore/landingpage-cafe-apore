@@ -66,7 +66,7 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
 
           <Separator className="block tablet:hidden" />
 
-          <div className="flex-1 space-y-2">
+          <div className="flex-1 space-y-2 tablet:min-h-[300px]">
             {news.docs.map((data) => (
               <NewsCard data={data} key={data.id} />
             ))}
@@ -79,6 +79,7 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
                   hasNextPage={news.hasNextPage}
                   hasPrevPage={news.hasPrevPage}
                   currentPage={page}
+                  maxPage={news.totalPages}
                 />
               </div>
             ) : (

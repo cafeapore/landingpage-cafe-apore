@@ -8,9 +8,15 @@ type PaginateProps = {
   hasPrevPage: boolean;
   hasNextPage: boolean;
   currentPage: number;
+  maxPage: number;
 };
 
-const Paginate = ({ hasNextPage, hasPrevPage, currentPage }: PaginateProps) => {
+const Paginate = ({
+  hasNextPage,
+  hasPrevPage,
+  currentPage,
+  maxPage,
+}: PaginateProps) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -37,7 +43,9 @@ const Paginate = ({ hasNextPage, hasPrevPage, currentPage }: PaginateProps) => {
         <ChevronLeft />
       </Button>
 
-      <p className="text-lg font-semibold text-ring">{currentPage}</p>
+      <p className="text-lg font-semibold text-ring">
+        {currentPage}/{maxPage}
+      </p>
 
       <Button
         className="px-10 tablet:px-4"
