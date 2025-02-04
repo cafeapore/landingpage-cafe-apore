@@ -3,6 +3,7 @@ import MainNewsCard from "@/components/blog/MainNewsCard";
 import NewsCard from "@/components/blog/NewsCard";
 import Paginate from "@/components/blog/Paginate";
 import { Separator } from "@/components/ui/separator";
+import { Suspense } from "react";
 
 type BlogPage = {
   searchParams?: Promise<{
@@ -75,12 +76,14 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
 
             {news.docs.length ? (
               <div className="flex justify-around tablet:justify-end w-full gap-5">
-                <Paginate
-                  hasNextPage={news.hasNextPage}
-                  hasPrevPage={news.hasPrevPage}
-                  currentPage={page}
-                  maxPage={news.totalPages}
-                />
+                <Suspense fallback={<div></div>}>
+                  <Paginate
+                    hasNextPage={news.hasNextPage}
+                    hasPrevPage={news.hasPrevPage}
+                    currentPage={page}
+                    maxPage={news.totalPages}
+                  />
+                </Suspense>
               </div>
             ) : (
               <p>Nada encontrado.</p>

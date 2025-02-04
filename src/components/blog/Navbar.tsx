@@ -3,6 +3,7 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import SearchField from "./SearchField";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const NavbarBlog = () => {
   return (
@@ -33,7 +34,9 @@ const NavbarBlog = () => {
           </Link>
         </div>
 
-        <SearchField />
+        <Suspense fallback={<div></div>}>
+          <SearchField />
+        </Suspense>
 
         <Link href="/" className="hidden tablet:block">
           <Button className="text-ring font-semibold bg-yellow-500 px-10 w-full tablet:w-min">
