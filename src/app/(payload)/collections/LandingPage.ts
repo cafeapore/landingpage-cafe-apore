@@ -26,10 +26,10 @@ export const LandingPage: GlobalConfig = {
       label: "Produtos",
       fields: [
         {
-          type: "text",
           name: "image",
           label: "Imagem",
-          validate: validatePayloadURL,
+          type: "upload",
+          relationTo: "media",
         },
         {
           type: "text",

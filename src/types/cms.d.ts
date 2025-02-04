@@ -11,7 +11,7 @@ export type LandingPageData = {
 
 export type ProductsProps = {
   id: string;
-  image: string;
+  image: Media;
   name: string;
   description: string;
 };
