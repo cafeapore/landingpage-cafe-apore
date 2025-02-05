@@ -14,6 +14,7 @@ const HighlightCard = ({ product }: HighlightCardProps) => {
 
         {product.image?.url && (
           <Image
+            priority
             alt="Imagem do produto"
             src={product.image.url}
             height={1000}
