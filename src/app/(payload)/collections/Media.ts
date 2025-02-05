@@ -14,6 +14,9 @@ export const Media: CollectionConfig = {
       type: "text",
     },
   ],
+  access: {
+    read: () => true,
+  },
   hooks: {
     beforeValidate: [
       ({ data, req }) => {
