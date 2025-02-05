@@ -3,7 +3,6 @@ import MainNewsCard from "@/components/blog/MainNewsCard";
 import NewsCard from "@/components/blog/NewsCard";
 import Paginate from "@/components/blog/Paginate";
 import { Separator } from "@/components/ui/separator";
-import { revalidatePath } from "next/cache";
 import { Suspense } from "react";
 
 type BlogPage = {
@@ -53,8 +52,6 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
       ],
     },
   });
-
-  revalidatePath("/blog");
 
   return (
     <div className="min-h-[calc(100svh-10rem)] w-full pb-10 tablet:pb-5 tablet:py-0 h-full flex items-center">

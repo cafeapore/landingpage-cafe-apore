@@ -1,4 +1,5 @@
 "use client";
+import revalidateRoute from "@/actions/revalidateRoute";
 import Footer from "@/components/landingPage/Footer";
 import Navbar from "@/components/landingPage/Navbar";
 import Lenis from "@studio-freight/lenis";
@@ -17,6 +18,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
     }
 
     requestAnimationFrame(raf);
+
+    revalidateRoute({ route: "/" });
 
     return () => {
       lenis.destroy();
