@@ -17,7 +17,7 @@ const HighlightsSection = ({ products }: HighlightsSectionProps) => {
         <p>Destaques</p>
       </div>
 
-      <div className="grid grid-cols-2 tablet:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 tablet:grid-cols-4 gap-5">
         {products.map((product) => (
           <HighlightCard product={product} key={product.id} />
         ))}
