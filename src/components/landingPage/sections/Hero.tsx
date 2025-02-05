@@ -47,6 +47,8 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
           loop
           muted
           className="absolute tablet:hidden  -z-10 w-auto min-w-full min-h-full max-w-none"
+          height={1990}
+          width={1080}
         >
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
