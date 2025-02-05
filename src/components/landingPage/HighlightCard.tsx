@@ -9,7 +9,6 @@ type HighlightCardProps = {
 };
 
 const HighlightCard = ({ product }: HighlightCardProps) => {
-  console.log(product);
   return (
     <Card className="bg-ring group overflow-hidden">
       <CardContent className="flex flex-col min-h-52 h-full p-5 gap-2 relative">

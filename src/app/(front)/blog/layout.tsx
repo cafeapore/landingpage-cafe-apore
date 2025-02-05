@@ -1,4 +1,4 @@
-"üse client";
+"use client";
 
 import revalidateRoute from "@/actions/revalidateRoute";
 import NavbarBlog from "@/components/blog/Navbar";
