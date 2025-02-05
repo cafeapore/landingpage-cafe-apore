@@ -3,6 +3,7 @@ import MainNewsCard from "@/components/blog/MainNewsCard";
 import NewsCard from "@/components/blog/NewsCard";
 import Paginate from "@/components/blog/Paginate";
 import { Separator } from "@/components/ui/separator";
+import { Where } from "payload";
 import { Suspense } from "react";
 
 type BlogPage = {
@@ -17,6 +18,36 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
   const page = Number(sParams?.page) || 1;
   const query = sParams?.query;
 
+  const whereCondition: Where = query
+    ? {
+        and: [
+          {
+            or: [
+              {
+                title: {
+                  like: query,
+                },
+              },
+              {
+                description: {
+                  like: query,
+                },
+              },
+            ],
+          },
+          {
+            main: {
+              equals: false,
+            },
+          },
+        ],
+      }
+    : {
+        main: {
+          equals: false,
+        },
+      };
+
   const mainNews = await getNewsData({
     page: 0,
     where: {
@@ -28,29 +59,7 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
 
   const news = await getNewsData({
     page,
-    where: {
-      and: [
-        {
-          or: [
-            {
-              title: {
-                like: query,
-              },
-            },
-            {
-              description: {
-                like: query,
-              },
-            },
-          ],
-        },
-        {
-          main: {
-            equals: false,
-          },
-        },
-      ],
-    },
+    where: whereCondition,
   });
 
   return (
@@ -62,34 +71,36 @@ const BlogPage = async ({ searchParams }: BlogPage) => {
           </p>
         )}
 
-        <div className="flex flex-col items-start tablet:flex-row gap-5 tablet:gap-10 h-full">
-          {!query && <MainNewsCard data={mainNews.docs[0]} />}
+        {(news.docs.length || mainNews.docs.length) && (
+          <div className="flex flex-col items-start tablet:flex-row gap-5 tablet:gap-10 h-full">
+            {!query && <MainNewsCard data={mainNews.docs[0]} />}
 
-          <Separator className="block tablet:hidden" />
+            <Separator className="block tablet:hidden" />
 
-          <div className="flex-1 space-y-5 tablet:space-y-2">
-            {news.docs.map((data) => (
-              <NewsCard data={data} key={data.id} />
-            ))}
+            <div className="flex-1 space-y-5 tablet:space-y-2">
+              {news.docs.map((data) => (
+                <NewsCard data={data} key={data.id} />
+              ))}
 
-            <Separator />
+              <Separator />
 
-            {news.docs.length ? (
-              <div className="flex justify-around tablet:justify-end w-full gap-5">
-                <Suspense fallback={<div></div>}>
-                  <Paginate
-                    hasNextPage={news.hasNextPage}
-                    hasPrevPage={news.hasPrevPage}
-                    currentPage={page}
-                    maxPage={news.totalPages}
-                  />
-                </Suspense>
-              </div>
-            ) : (
-              <p>Nada encontrado.</p>
-            )}
+              {news.docs.length ? (
+                <div className="flex justify-around tablet:justify-end w-full gap-5">
+                  <Suspense fallback={<div></div>}>
+                    <Paginate
+                      hasNextPage={news.hasNextPage}
+                      hasPrevPage={news.hasPrevPage}
+                      currentPage={page}
+                      maxPage={news.totalPages}
+                    />
+                  </Suspense>
+                </div>
+              ) : (
+                <p>Nada encontrado.</p>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

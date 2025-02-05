@@ -44,6 +44,7 @@ export const News: CollectionConfig = {
       admin: {
         position: "sidebar",
       },
+      defaultValue: false,
     },
     {
       name: "slug",
