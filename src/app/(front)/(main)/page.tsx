@@ -6,9 +6,12 @@ import HighlightsSection from "@/components/landingPage/sections/Highlights";
 import HistorySection from "@/components/landingPage/sections/History";
 import LocationsSection from "@/components/landingPage/sections/locations";
 import { Separator } from "@/components/ui/separator";
+import { revalidatePath } from "next/cache";
 
 const Main = async () => {
   const landingPageData = await getLandingPageData();
+
+  revalidatePath("/");
 
   return (
     <div>
