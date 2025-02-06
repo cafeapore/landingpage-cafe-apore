@@ -54,13 +54,13 @@ const Navbar = () => {
       className="w-full flex items-center justify-center bg-ring top-0"
       id="hero"
     >
-      <nav className="mx-auto max-w-desktop px-10 py-5 flex justify-between items-center w-full">
+      <nav className="mx-auto max-w-desktop px-10 py-2 flex justify-between items-center w-full">
         <Image
           alt="Logo"
-          src="/logo.png"
+          src="/logo-navbar.png"
           height={300}
           width={300}
-          className="h-10 w-auto"
+          className="h-20 w-auto"
         />
 
         {/*Mobile navbar*/}
