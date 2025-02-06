@@ -19,7 +19,7 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
             <span className="text-yellow-500">100%</span> arábico
           </p>
 
-          <p className="font-normal  normal-case text-justify tablet:text-end">
+          <p className="font-normal normal-case text-center tablet:text-end">
             Desde 1962 unindo qualidade e produção, entregando produtos que
             figuram entre os melhores do interior de São Paulo.
           </p>
