@@ -47,17 +47,17 @@ export const LandingPage: GlobalConfig = {
       ],
     },
 
-    {
-      name: "locations",
-      type: "array",
-      label: "Localizações",
-      fields: [
-        {
-          type: "text",
-          name: "text",
-          label: "Nome da Localização",
-        },
-      ],
-    },
+    // {
+    //   name: "locations",
+    //   type: "array",
+    //   label: "Localizações",
+    //   fields: [
+    //     {
+    //       type: "text",
+    //       name: "text",
+    //       label: "Nome da Localização",
+    //     },
+    //   ],
+    // },
   ],
 };
