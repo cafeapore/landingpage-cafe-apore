@@ -21,17 +21,18 @@ const Navbar = () => {
       route: "#hero",
     },
     {
-      title: "Sobre",
-      route: "#about",
-    },
-    {
       title: "Produtos",
       route: "#products",
     },
     {
-      title: "Regiões",
-      route: "#provinces",
+      title: "Sobre",
+      route: "#about",
     },
+
+    // {
+    //   title: "Regiões",
+    //   route: "#provinces",
+    // },
     {
       title: "Blog",
       route: "/blog",
@@ -95,13 +96,12 @@ const Navbar = () => {
         <div className="hidden desktop:flex gap-40 text-background w-full justify-center">
           {menuOptions.map((option, index) => (
             <Link href={option.route} key={index}>
-              <p className="font-light hover:scale-110 hover:text-yellow-500 transition">
+              <p className="font-light hover:scale-110 hover:text-yellow-500 transition text-xl">
                 {option.title}
               </p>
             </Link>
           ))}
         </div>
-
         <div className="hidden desktop:block">{contactButton}</div>
       </nav>
     </header>
