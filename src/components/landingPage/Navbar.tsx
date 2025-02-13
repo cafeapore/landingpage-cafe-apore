@@ -65,7 +65,7 @@ const Navbar = () => {
 
         {/*Mobile navbar*/}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="tablet:hidden">
+          <SheetTrigger className="desktop:hidden">
             <Menu size={32} className="text-secondary" />
           </SheetTrigger>
           <SheetContent>
@@ -92,7 +92,7 @@ const Navbar = () => {
 
         {/*Desktop navbar*/}
 
-        <div className="hidden tablet:flex gap-10 text-background ">
+        <div className="hidden desktop:flex gap-40 text-background w-full justify-center">
           {menuOptions.map((option, index) => (
             <Link href={option.route} key={index}>
               <p className="font-light hover:scale-110 hover:text-yellow-500 transition">
@@ -102,7 +102,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden tablet:block">{contactButton}</div>
+        <div className="hidden desktop:block">{contactButton}</div>
       </nav>
     </header>
   );
