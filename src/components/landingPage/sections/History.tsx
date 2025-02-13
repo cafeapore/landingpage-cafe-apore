@@ -11,7 +11,7 @@ const HistorySection = ({ textData }: { textData: SerializedEditorState }) => {
       <div className="h-full w-full flex-1 flex items-center justify-center">
         <Image
           alt="pic1"
-          src="/pic-1.png"
+          src="/pic-1.jpg"
           height={1000}
           width={1000}
           className="h-[70svh] tablet:h-[80svh] w-full object-cover rounded-lg"
