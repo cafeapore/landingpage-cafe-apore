@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 
-const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
+const HeroSection = ({
+  videoUrl,
+  storeUrl,
+}: {
+  videoUrl: string;
+  storeUrl: string;
+}) => {
   return (
     <section className="w-full bg-ring/75 tablet:bg-ring/100 relative flex items-center justify-center  overflow-hidden min-h-[calc(100svh-6rem)]">
       <div className="tablet:max-w-6xl flex w-full items-center">
@@ -36,12 +42,14 @@ const HeroSection = ({ videoUrl }: { videoUrl: string }) => {
               </Button>
             </Link>
 
-            <Button
-              variant="outline"
-              className="text-ring font-semibold min-w-32"
-            >
-              Loja
-            </Button>
+            <Link href={storeUrl} target="_blank">
+              <Button
+                variant="outline"
+                className="text-ring font-semibold min-w-32"
+              >
+                Loja
+              </Button>
+            </Link>
           </div>
         </div>
 

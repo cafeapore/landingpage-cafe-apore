@@ -12,7 +12,10 @@ const Main = async () => {
   return (
     <div>
       <NavbarScroll />
-      <HeroSection videoUrl={landingPageData.heroVideo} />
+      <HeroSection
+        videoUrl={landingPageData.heroVideo}
+        storeUrl={process.env.URL_STORE!}
+      />
       <Separator />
       <HighlightsSection products={landingPageData.products} />
       <Separator />
