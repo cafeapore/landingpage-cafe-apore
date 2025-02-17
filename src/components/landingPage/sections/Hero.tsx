@@ -42,7 +42,7 @@ const HeroSection = ({
               </Button>
             </Link>
 
-            <Link href={storeUrl} target="_blank">
+            <Link href={storeUrl ?? "#"} target="_blank">
               <Button
                 variant="outline"
                 className="text-ring font-semibold min-w-32"
